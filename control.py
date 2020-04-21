@@ -87,7 +87,7 @@ def _(event):
     " Say 'hello' when `c-t` is pressed. "
     def print_hello():
         print('backward')
-        sock.mysend(bytes(d['rightCommand']', 'utf-8'))
+        sock.mysend(bytes(d['rightCommand'], 'utf-8'))
         time.sleep(0.25)
     run_in_terminal(print_hello)
 

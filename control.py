@@ -3,8 +3,8 @@ import sys
 import time
 from prompt_toolkit import prompt
 from prompt_toolkit.application import run_in_terminal
-from prompt_toolkit.key_binding import KeyBindings    
-
+from prompt_toolkit.key_binding import KeyBindings
+# AUSTIN WAS HERE
 
 class MySocket:
     """demonstration class only
@@ -61,7 +61,7 @@ sock = MySocket()
 sock.connect('10.155.13.2',4096)
 
 sock.mysend( bytes('hello world', 'utf-8'))
-  
+
 bindings = KeyBindings()
 
 @bindings.add('w')
@@ -81,7 +81,7 @@ def _(event):
         sock.mysend(bytes(d['leftCommand'], 'utf-8'))
         time.sleep(0.25)
     run_in_terminal(print_hello)
-	
+
 @bindings.add('s')
 def _(event):
     " Say 'hello' when `c-t` is pressed. "
@@ -116,30 +116,3 @@ def _(event):
 
 text = prompt('> ', key_bindings=bindings)
 print('You said: %s' % text)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

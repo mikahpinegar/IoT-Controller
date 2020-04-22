@@ -2,6 +2,7 @@ import Felgo 3.0
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
 
+
 App {
     // You get free licenseKeys from https://felgo.com/licenseKey
     // With a licenseKey you can:
@@ -18,7 +19,7 @@ App {
 
             // holds the input form
             GridLayout {
-                id: grid
+                id: grid1
                 columns: 2
                 rows: 7
                 rowSpacing: 45
@@ -39,7 +40,7 @@ App {
                     // anchors.left: ipLabel.right
                     placeholderText: "IOT module IP address"
                 }
-
+                // Port # and feild
                 AppText {
                     id: portLabel
                     text: qsTr("Port Number:")
@@ -57,7 +58,7 @@ App {
                     //  anchors.top: ipText.bottom
                     placeholderText: "Enter your port number"
                 }
-
+                // forward direction input
                 AppText {
                     id: forwardLabel
                     text: qsTr("Forward:")
@@ -75,6 +76,7 @@ App {
                     // anchors.top: ipText.bottom
                     placeholderText: "Your forward command"
                 }
+                // fbackward direction input
                 AppText {
                     id: backwardLabel
                     text: qsTr("Backwards:")
@@ -92,6 +94,7 @@ App {
                     //    anchors.top: ipText.bottom
                     placeholderText: "Your backward command"
                 }
+                // left direction input
                 AppText {
                     id: leftLabel
                     text: qsTr("Left:")
@@ -109,6 +112,7 @@ App {
                     //    anchors.top: ipText.bottom
                     placeholderText: "Your left turn command"
                 }
+                // right direction and feild
                 AppText {
                     id: rightLabel
                     text: qsTr("Right:")
@@ -131,13 +135,10 @@ App {
             FloatingActionButton {
                 id: submitButton
                 icon: IconType.checkcircle
+                onClicked: home.navigationStack.push(Qt.resolvedUrl("controllerGUI.qml"))
 
             }
-
-
         }
-
     }
-
 }
 

@@ -57,11 +57,13 @@ d = generateCommands(myCommandStructure)
 print(d)
 
 sock = MySocket()
+sockRecieve = MySocket()
 
-sock.connect('10.155.13.2',4096)
+sock.connect('localhost',4096)
 
+sockRecieve.myreceive()
 sock.mysend( bytes('hello world', 'utf-8'))
-  
+
 bindings = KeyBindings()
 
 @bindings.add('w')
